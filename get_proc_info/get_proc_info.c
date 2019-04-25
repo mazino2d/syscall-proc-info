@@ -65,7 +65,7 @@ SYSCALL_DEFINE2(get_proc_info, pid_t, pid, struct procinfos*, info)
         strcpy(kpinfo.oldest_child_proc.name, "NULL"); 
     }
     else {
-        child  = list_last_entry(&proc->children, struct task_struct, sibling); 
+        child  = list_first_entry(&proc->children, struct task_struct, sibling); 
 
         kpinfo.oldest_child_proc.pid = child->pid;
         strcpy(kpinfo.oldest_child_proc.name, child->comm); 
