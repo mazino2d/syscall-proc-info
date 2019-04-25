@@ -1315,4 +1315,9 @@ static inline unsigned int ksys_personality(unsigned int personality)
 	return old;
 }
 
+// get_proc_info system call :>>
+struct proc_info;
+struct procinfos;
+
+asmlinkage long sys_get_proc_info(pid_t, struct procinfos*);
 #endif
